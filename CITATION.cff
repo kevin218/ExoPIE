@@ -1,16 +1,16 @@
 cff-version: 1.2.0
 title: my_package
 message: If you use this software, please cite as below.
-date-released: 2022-03-29
-url: 'https://github.com/mpi-astronomy/mpia-python-template'
+date-released: 2022-06-10
+url: 'https://github.com/kevin218/ExoPIE'
 version: 0.0.1
 type: software
 authors:
-  - family-names: Name
-    given-names: Author
-    email: author.name@email.com
-    affiliation: MPIA
-    orcid: 'https://orcid.org/0000-0003-1665-2073'
+  - family-names: Stevenson
+    given-names: Kevin B.
+    email: kbstevenson@gmail.com
+    affiliation: Johns Hopkins APL
+    orcid: 'https://orcid.org/0000-0002-7352-7941'
 
 # For citing software, see:
 
