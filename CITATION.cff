@@ -1,9 +1,10 @@
 cff-version: 1.2.0
-title: my_package
+title: ExoPIE
 message: If you use this software, please cite as below.
 date-released: 2022-06-10
 url: 'https://github.com/kevin218/ExoPIE'
-version: 0.0.1
+doi: 10.3847/2041-8213/aba68c
+version: 1.0
 type: software
 authors:
   - family-names: Stevenson
@@ -19,7 +20,7 @@ authors:
 # GitHub has Zenodo DOI integration:
 # https://guides.github.com/activities/citable-code/
 
-# What is a CITATION.cff file: 
+# What is a CITATION.cff file:
 # https://citation-file-format.github.io/
 
 # This CITATION.cff file was generated with cffinit.
