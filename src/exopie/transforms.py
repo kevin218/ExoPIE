@@ -5,7 +5,7 @@ import scipy.stats as sps
 import dynesty, sys, os
 from dynesty import plotting as dyplot
 from dynesty import utils as dyfunc
-from exoMAST_Obs import exoMAST_TableSNR as mast
+from exoMAST import ObsTable as mast
 
 Rsun    = 69.634e7  #meters
 Rjup    = 6.9911e7  #meters
@@ -73,6 +73,8 @@ def run_transiting(wave, snr, Tprng, Ts, Rp, Rs, sigma=None, pmin=None, pmax=Non
     else:
         print("Input error")
         return
+    if type(Tprng) is not np.ndarray:
+        Tprng = np.array([Tprng])
     radS    = mast.planck(wave*1e-6, Ts)
     areaS   = np.pi*(Rs*Rsun)**2
     intS    = radS*areaS
@@ -108,6 +110,10 @@ def run_transiting(wave, snr, Tprng, Ts, Rp, Rs, sigma=None, pmin=None, pmax=Non
         results = sampler.results
         results.summary()
 
+        # Create directory
+        if os.path.isdir(savefig) == False:
+            os.mkdir(savefig, 511)
+
         #quantiles=[0.159, 0.5, 0.841]
         cfig, caxes = dyplot.cornerplot(results, color='b', show_titles=True, truths=mu, title_fmt='.4f')
         cfig.savefig(savefig+"/Corner-"+str(Tprng[ii])+"K.png",dpi=200)
@@ -140,6 +146,8 @@ def run_nontransiting(wave, snr, Tprng, Ts, Rp, Rs, sigma=None, pmin=None, pmax=
     else:
         print("Input error")
         return
+    if type(Tprng) is not np.ndarray:
+        Tprng = np.array([Tprng])
     radS    = mast.planck(wave*1e-6, Ts)
     areaS   = np.pi*(Rs*Rsun)**2
     intS    = radS*areaS
